@@ -401,7 +401,7 @@ GenerateSerializeWithCachedSizes(io::Printer* printer) const {
   }
   if (!array_written) {
     printer->Print(variables_,
-        "\n{for (int i = 0, n = this->$name$_size(); i < n; i++) {\n");
+        "{\nfor (int i = 0, n = this->$name$_size(); i < n; i++) {\n");
     if (descriptor_->is_packed()) {
       printer->Print(variables_,
         "  ::google::protobuf::internal::WireFormatLite::Write$declared_type$NoTag(\n"
